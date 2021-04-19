@@ -47,10 +47,6 @@ The following video showcases the web application's appearance and functionality
 ```
 ```
 
-## Link to deployed application
-[Deployed application](https://crsmith01.github.io/homework-3-password-generator/)
-
-
 ### Contact:
 * [Catherine Smith](https://github.com/crsmith01)
 
