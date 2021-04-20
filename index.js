@@ -7,7 +7,7 @@ const generateMarkdown = require('./utils/generateMarkdown')
 
 
 // TODO: Create an array of questions for user input
-const questions = [];
+// const questions = [];
 // Creates a writeFile function using promises instead of a callback function
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -66,8 +66,9 @@ const promptUser = () => {
   ]);
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {}
 
+const g
 // (Arrow) function to dynamically create the README file with template literal
 const generateReadme = (answers) =>
 `
@@ -102,12 +103,12 @@ ${answers.contributing}
 To run tests, run the following command: ${answers.test}
 
 ## Questions
-If you have any questions about the repo, open an issue or contact me directly at ${answers.email}. You can find more of my work at ${answers.username}.
+If you have any questions about the repo, either open an issue or contact me directly at ${answers.email}. You can find more of my work at ${answers.username}.
 `
 
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
     promptUser()
       .then((answers) => writeFileAsync('README.md', generateReadme(answers)));
       .then(() => console.log('Successfully wrote to README.md'))
