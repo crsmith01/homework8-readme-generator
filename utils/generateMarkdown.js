@@ -30,5 +30,5 @@ function generateMarkdown(data) {
 `;
 }
 
-// Exports this 
+// Exports this file so the content can be used in other files (in this case, index.js)
 module.exports = generateMarkdown;s

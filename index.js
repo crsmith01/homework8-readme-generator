@@ -34,7 +34,7 @@ const promptUser = () => {
       name: 'description',
     },
     {
-      type: 'list',
+      type: 'checkbox',
       message: 'What kind of license should your project have?',
       name: 'license',
       choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
@@ -69,7 +69,7 @@ const promptUser = () => {
 // function writeToFile(fileName, data) {}
 
 const g
-// (Arrow) function to dynamically create the README file with template literal
+// (Arrow) function to dynamically create the README file with template literal, inserting user responses from the above prompts
 const generateReadme = (answers) =>
 `
 // license badge stuff here = with generateMarkdown.js
@@ -106,12 +106,11 @@ To run tests, run the following command: ${answers.test}
 If you have any questions about the repo, either open an issue or contact me directly at ${answers.email}. You can find more of my work at ${answers.username}.
 `
 
-
 // TODO: Create a function to initialize app
 function init() {
     promptUser()
       .then((answers) => writeFileAsync('README.md', generateReadme(answers)));
-      .then(() => console.log('Successfully wrote to README.md'))
+      .then(() => console.log('Successfully wrote to README.md'));
       .catch((err) => console.error(err));
   };
 
