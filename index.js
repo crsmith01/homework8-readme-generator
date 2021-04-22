@@ -21,7 +21,7 @@ const generateMarkdown = require('./utils/generateMarkdown')
 const writeToFile = (answers) => {
     // writes output of user's answers to a README.md file
     fs.writeFile('README.md', answers, (error) =>
-    // ternary _____ to account for errors and successes
+    // ternary operator to account for errors and successes
     error ? console.log('Error! Something went wrong.') : console.log('Success! Your README.md file has been created.'));
 }
 
@@ -82,12 +82,12 @@ const promptUser = () => {
 
 
 // TODO: Create a function to initialize app
-function init() {
-    promptUser()
-      .then((answers) => writeFileAsync('README.md', generateReadme(answers)));
-      .then(() => console.log('Successfully wrote to README.md'));
-      .catch((err) => console.error(err));
-  };
+// function init() {
+//     promptUser()
+//       .then((answers) => writeFileAsync('README.md', generateReadme(answers)));
+//       .then(() => console.log('Successfully wrote to README.md'));
+//       .catch((err) => console.error(err));
+//   };
 
 // OR
 const init = () => {
@@ -100,3 +100,7 @@ const init = () => {
 
 // This function call initializes the app.
 init();
+
+
+
+// **Make answers into userPrompt or some other placehodler??? Is answers reserved?

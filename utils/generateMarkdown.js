@@ -65,7 +65,8 @@ function generateMarkdown(data) {
 }
 
 // (Arrow) function to dynamically create the README file with template literal, inserting user responses from the above prompts
-const generateReadme = (answers) =>
+const generateMarkdown = (answers) =>
+// should answers be data??? lines 61-62 provided or something I added?????
 `
 // license badge stuff here = with generateMarkdown.js
 
@@ -102,4 +103,6 @@ If you have any questions about the repo, either open an issue or contact me dir
 `
 
 // Exports this file so the content can be used in other files (in this case, index.js)
-module.exports = generateMarkdown;s
+// should it be module.exports = {
+  // generateMarkdown: generateMarkedown}
+module.exports = generateMarkdown;
