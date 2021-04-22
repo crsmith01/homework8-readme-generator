@@ -64,5 +64,42 @@ function generateMarkdown(data) {
 `;
 }
 
+// (Arrow) function to dynamically create the README file with template literal, inserting user responses from the above prompts
+const generateReadme = (answers) =>
+`
+// license badge stuff here = with generateMarkdown.js
+
+# ${answers.project}
+
+## Description
+${answers.description}
+
+## Table of Contents
+1. [Installation](#Installation)
+2. [Usage](#Usage)
+3. [License](#License)
+4. [Contributing](#Contributing)
+5. [Tests](#Tests)
+6. [Questions](#Questions)
+
+## Installation
+To install necessary dependencies, run the following command${answers.dependencies}
+
+## Usage
+${answers.repo}
+
+## License
+This project is licensed under the ${answers.license} license.
+
+## Contributing
+${answers.contributing}
+
+## Tests
+To run tests, run the following command: ${answers.test}
+
+## Questions
+If you have any questions about the repo, either open an issue or contact me directly at ${answers.email}. You can find more of my work at ${answers.username}.
+`
+
 // Exports this file so the content can be used in other files (in this case, index.js)
 module.exports = generateMarkdown;s
