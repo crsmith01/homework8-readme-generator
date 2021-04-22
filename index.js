@@ -9,12 +9,20 @@ const generateMarkdown = require('./utils/generateMarkdown')
 // TODO: Create an array of questions for user input
 // const questions = [];
 
+
+// TODO: Create a function to write README file
+// function writeToFile(fileName, data) {}
+
+
 // Creates a writeFile function using promises instead of a callback function
 // const writeFileAsync = util.promisify(fs.writeFile);
 
 // or
 const writeToFile = (answers) => {
-    fs.writeFile('')
+    // writes output of user's answers to a README.md file
+    fs.writeFile('README.md', answers, (error) =>
+    // ternary _____ to account for errors and successes
+    error ? console.log('Error! Something went wrong.') : console.log('Success! Your README.md file has been created.'));
 }
 
 const promptUser = () => {
@@ -71,10 +79,6 @@ const promptUser = () => {
     },
   ]);
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-const g
 
 
 // TODO: Create a function to initialize app
