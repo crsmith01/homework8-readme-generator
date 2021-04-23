@@ -51,61 +51,47 @@ const renderLicenseLink = (license) => {
 
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-// const renderLicenseSection = (data) => {
-  // const licenseBadge = renderLicenseBadge(license);
-  // const licenseURL = renderLicenseLink(license);
-// }
-
-// // TODO: Create a function to generate markdown for README
-// function generateMarkdown(data) {
-//   return `# ${data.title}
-
-// `;
-// }
-
 // (Arrow) function to dynamically create the README file with template literal, inserting user responses from the prompts in Inquirer
 const generateMarkdown = (answers) => {
-  // Destructuring the user's answers
+  // Destructuring the user's answers 
   const { project, description, dependencies, repo, license, contributing, test, email, username } = answers;
   // Bringing the license badges and links into the function that generates that markdown
   const licenseBadge = renderLicenseBadge(license);
   const licenseURL = renderLicenseLink(license);  
 
   return `
-# ${project}
+  ## ${project}
 
-## Description
-${description}
+  ## Description
+  ${description}
 
-## Table of Contents
-1. [Installation](#Installation)
-2. [Usage](#Usage)
-3. [License](#License)
-4. [Contributing](#Contributing)
-5. [Tests](#Tests)
-6. [Questions](#Questions)
+  ## Table of Contents
+  1. [Installation](#Installation)
+  2. [Usage](#Usage)
+  3. [License](#License)
+  4. [Contributing](#Contributing)
+  5. [Tests](#Tests)
+  6. [Questions](#Questions)
 
-## Installation
-To install necessary dependencies, run the following command${dependencies}
+  ## Installation
+  To install necessary dependencies, run the following command: ${dependencies}
 
-## Usage
-${repo}
+  ## Usage
+  ${repo}
 
-## License
-This project is licensed under the ${license} license.
+  ## License
+  This project is licensed under the ${license} license.
 
-## Contributing
-${contributing}
+  ## Contributing
+  ${contributing}
 
-## Tests
-To run tests, run the following command: ${test}
+  ## Tests
+  To run tests, run the following command: ${test}
 
-## Questions
-If you have any questions about the repo, either open an issue or contact me directly at ${email}. You can find more of my work at ${username}.
-`
-}
+  ## Questions
+  If you have any questions about the repo, either open an issue or contact me directly at ${email}. You can find more of my work at ${username}.
+  `
+};
 
 // Exports this file so the content can be used in other files (in this case, index.js)
 module.exports = {

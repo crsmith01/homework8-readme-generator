@@ -2,29 +2,19 @@
 //Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const util = require('util');
-const generateMarkdown = require('./utils/generateMarkdown')
+// const util = require('util');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 
-// TODO: Create an array of questions for user input
-// const questions = [];
-
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-
-// Creates a writeFile function using promises instead of a callback function
-// const writeFileAsync = util.promisify(fs.writeFile);
-
-// or
+// Function to write README file
 const writeToFile = (userAnswers) => {
     // Writes output of user's answers to a README.md file
     fs.writeFile('README.md', userAnswers, (error) =>
     // Ternary operator to account for errors and successes
     error ? console.log('Error! Something went wrong.') : console.log('Success! Your README.md file has been created.'));
-}
+};
 
+// Function to use Inquirer to ask user for input
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -66,7 +56,7 @@ const promptUser = () => {
       type: 'input',
       message: 'What command should be used to run tests?',
       name: 'test',
-    //   Sets the defualt command to run tests as 'npm test'
+    //   Sets the default command to run tests as 'npm test'
       default: 'npm test',
     },
     {
@@ -79,27 +69,27 @@ const promptUser = () => {
       message: 'What does the user need to know about contributing to the repo?',
       name: 'contributing',
     },
-  ]);
+]);
 
-
-
-// TODO: Create a function to initialize app
+// TODO: When trying to use util and promisify 
 // function init() {
 //     promptUser()
-//       .then((answers) => writeFileAsync('README.md', generateReadme(answers)));
-//       .then(() => console.log('Successfully wrote to README.md'));
-//       .catch((err) => console.error(err));
-//   };
+//     .then((userAnswers) => {
+//         const markdown = generateMarkdown(userAnswers)
+//         writeFileAsync('README.md', markdown)}
+//     .then(() => console.log('Successfully wrote to README.md'))
+//     .catch((err) => console.error(err));
+// }
 
-// OR
-const init;
+// Function to initialize the app.
 const init = () => {
     promptUser()
         .then((userAnswers) => {
-            const markdown = generateMarkdown(userAnswers);
-            writeToFile(markdown);
+            const markdown = generateMarkdown.generateMarkdown(userAnswers)
+            writeToFile(markdown)
         })
-}
+};
+
 
 // This function call initializes the app.
 init();
