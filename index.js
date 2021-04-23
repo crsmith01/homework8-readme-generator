@@ -1,7 +1,6 @@
-//Packages needed for this application
+//Packages and files needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const util = require('util');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 
@@ -13,9 +12,8 @@ const writeToFile = (userInput) => {
     error ? console.log('Error! Something went wrong.') : console.log('Success! Your README.md file has been created.'));
 };
 
-// Function to use Inquirer to ask user for input
-// promptUser = () => {
-//     return inquirer.prompt([
+
+// Array of questions for user to answer in Inquirer
 const questions = [
     {
       type: 'input',
@@ -70,19 +68,13 @@ const questions = [
       name: 'contributing',
     },
 ];
-// Just added when made questions array
+
+
+// Function to fire up Inquirer and populate with the questions array
 const promptUser = () => {
     return inquirer.prompt(questions)
 }
 
-
-// TODO: When trying to use util and promisify 
-// const init = () => {
-//     promptUser()
-//     .then((userInput) => writeToFile('README.md', generateMarkdown(userInput)))
-//     .then(() => console.log('Successfully wrote to README.md'))
-//     .catch((err) => console.error(err));
-// }
 
 // Function to initialize the app.
 const init = () => {
