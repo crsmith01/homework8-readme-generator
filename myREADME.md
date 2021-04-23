@@ -1,8 +1,18 @@
 # README.md Generator
 
+## Description
 When creating an open source project on GitHub, it is important to have a high-quality README for the application and should include what the app is for, how to use the app, how to install the app, how to report issues, and how to make contributions to increase the likelihood that other developers will contribute to the success of the project. 
 
 This is a command-line application that dynamically creates a professional README.md from a user's input via the Inquirer package, so the project creator can devote more time to working on their project. The finished README file includes space to describe what a new app is used for, how to report issues, and how to contribute to the app.
+
+## Table of Contents
+1. [Technologies Used](#Technologies-Used)
+2. [User Stort](#User-Story)
+3. [Acceptance Criteria](#Acceptance-Criteria)
+4. [Mock Up](#Mock-Up)
+5. [Contact](#Contact)
+6. [License](#License)
+
 
 ## Technologies Used
 ```
@@ -44,12 +54,11 @@ The following video showcases the web application's appearance and functionality
 [video demonstration]().
 
 
-### Contact:
+## Contact
 If you have any questions about the repo, contact me at [crsmith01](https://github.com/crsmith01).
 
 
 ## License
-
 Copyright 2021 Catherine Smith
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
