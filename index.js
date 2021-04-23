@@ -18,10 +18,10 @@ const generateMarkdown = require('./utils/generateMarkdown')
 // const writeFileAsync = util.promisify(fs.writeFile);
 
 // or
-const writeToFile = (answers) => {
-    // writes output of user's answers to a README.md file
-    fs.writeFile('README.md', answers, (error) =>
-    // ternary operator to account for errors and successes
+const writeToFile = (userAnswers) => {
+    // Writes output of user's answers to a README.md file
+    fs.writeFile('README.md', userAnswers, (error) =>
+    // Ternary operator to account for errors and successes
     error ? console.log('Error! Something went wrong.') : console.log('Success! Your README.md file has been created.'));
 }
 
@@ -52,30 +52,32 @@ const promptUser = () => {
       message: 'What kind of license should your project have?',
       name: 'license',
       choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
-    //   sets the default to the first object in the choices array in the line above (which is MIT license)
+    //   Sets the default to the first object in the choices array in the line above (which is MIT license)
       default: 0,
     },
     {
       type: 'input',
       message: 'What command should be run to install dependencies?',
       name: 'dependencies',
+    //   Sets the default dependencies installation command as npm i 
       default: 'npm i',
     },
     {
-        type: 'input',
-        message: 'What command should be used to run tests?',
-        name: 'test',
-        default: 'npm test',
+      type: 'input',
+      message: 'What command should be used to run tests?',
+      name: 'test',
+    //   Sets the defualt command to run tests as 'npm test'
+      default: 'npm test',
     },
     {
-        type: 'input',
-        message: 'What does the user need to know about using the repo?',
-        name: 'repo',
+      type: 'input',
+      message: 'What does the user need to know about using the repo?',
+      name: 'repo',
     },
     {
-        type: 'input',
-        message: 'What does the user need to know about contributing to the repo?',
-        name: 'contributing',
+      type: 'input',
+      message: 'What does the user need to know about contributing to the repo?',
+      name: 'contributing',
     },
   ]);
 
@@ -90,17 +92,14 @@ const promptUser = () => {
 //   };
 
 // OR
+const init;
 const init = () => {
     promptUser()
-        .then((answers) => {
-            const markdown = generateMarkdown.generateMarkdown(answers)
-            writeToFile(markdown)
+        .then((userAnswers) => {
+            const markdown = generateMarkdown(userAnswers);
+            writeToFile(markdown);
         })
 }
 
 // This function call initializes the app.
 init();
-
-
-
-// **Make answers into userPrompt or some other placehodler??? Is answers reserved?

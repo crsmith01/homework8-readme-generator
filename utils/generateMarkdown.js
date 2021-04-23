@@ -53,24 +53,25 @@ const renderLicenseLink = (license) => {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-const renderLicenseSection = (data) => {
-  const licenseBadge = renderLicenseBadge(data.license);
-  const licenseURL = renderLicenseLink(data.license);
-}
+// const renderLicenseSection = (data) => {
+  // const licenseBadge = renderLicenseBadge(license);
+  // const licenseURL = renderLicenseLink(license);
+// }
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+// // TODO: Create a function to generate markdown for README
+// function generateMarkdown(data) {
+//   return `# ${data.title}
 
-`;
-}
+// `;
+// }
 
-// (Arrow) function to dynamically create the README file with template literal, inserting user responses from the above prompts
-const generateMarkdown = (answers) =>
+// (Arrow) function to dynamically create the README file with template literal, inserting user responses from the prompts in Inquirer
+const generateMarkdown = (answers) => {
 // should answers be data??? lines 61-62 provided or something I added?????
-`
-// license badge stuff here = with generateMarkdown.js
+  const licenseBadge = renderLicenseBadge(license);
+  const licenseURL = renderLicenseLink(license);  
 
+  return `
 # ${answers.project}
 
 ## Description
@@ -102,6 +103,7 @@ To run tests, run the following command: ${answers.test}
 ## Questions
 If you have any questions about the repo, either open an issue or contact me directly at ${answers.email}. You can find more of my work at ${answers.username}.
 `
+}
 
 // Exports this file so the content can be used in other files (in this case, index.js)
 // should it be module.exports = {
