@@ -1,8 +1,7 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// Function returns a license badge based on which license is passed in by the user
 const renderLicenseBadge = (license) => {
-  let licenseBadge = ;
-  // Switch statement because we have 5 defined cases (4 licenses and option for no license) 
+  let licenseBadge;
+  // Evaluates user input for the 5 license choices. Switch statement because we have 5 defined cases (4 licenses and option for no license) 
   switch (license) {
     case 'MIT':
       licenseBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
@@ -17,17 +16,18 @@ const renderLicenseBadge = (license) => {
       licenseBadge = '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)';
       break;
     case 'None':
-      licenseBadge = ''
+      // If there is no license, return an empty string.
+      licenseBadge = '';
+      break;
     }
     return licenseBadge;
 }
 
 
 
-// This function returns the license link to the appropriate page on opensource.org, so the user can view more information about the chosen license
-// If there is no license, return an empty string
+// This function returns the license link to the appropriate page on opensource.org, so the user can view more information about the chosen license.
 const renderLicenseLink = (license) => {
-  let licenseURL = ;
+  let licenseURL;
   // Switch statement because we have 5 defined cases (4 licenses and option for no license) 
   switch (license) {
     case 'MIT':
@@ -43,7 +43,8 @@ const renderLicenseLink = (license) => {
       licenseURL = 'https://opensource.org/licenses/BSD-3-Clause';
       break;
     case 'None':
-      licenseURL = ''
+      // If there is no license, return an empty string.
+      licenseURL = '';
   }
 
   return licenseURL;
