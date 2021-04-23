@@ -45,22 +45,25 @@ const renderLicenseLink = (license) => {
     case 'None':
       // If there is no license, return an empty string.
       licenseURL = '';
+      break;
   }
-
   return licenseURL;
 
 }
 
 // (Arrow) function to dynamically create the README file with template literal, inserting user responses from the prompts in Inquirer
 const generateMarkdown = (answers) => {
-  // Destructuring the user's answers 
+  // Destructuring the user's answers (makes drier code in the template literal section)
   const { project, description, dependencies, repo, license, contributing, test, email, username } = answers;
   // Bringing the license badges and links into the function that generates that markdown
   const licenseBadge = renderLicenseBadge(license);
   const licenseURL = renderLicenseLink(license);  
 
   return `
-  ## ${project}
+  ## Project Name
+  ${project}
+
+  ${licenseBadge}
 
   ## Description
   ${description}
@@ -80,7 +83,8 @@ const generateMarkdown = (answers) => {
   ${repo}
 
   ## License
-  This project is licensed under the ${license} license.
+  ${licenseBadge}
+  This project is licensed under the ${license}(${licenseURL}) license.
 
   ## Contributing
   ${contributing}
