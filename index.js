@@ -1,4 +1,3 @@
-// Globally scoped variables
 //Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
@@ -7,16 +6,17 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 
 
 // Function to write README file
-const writeToFile = (userAnswers) => {
+const writeToFile = (userInput) => {
     // Writes output of user's answers to a README.md file
-    fs.writeFile('README.md', userAnswers, (error) =>
+    fs.writeFile('README.md', userInput, (error) =>
     // Ternary operator to account for errors and successes
     error ? console.log('Error! Something went wrong.') : console.log('Success! Your README.md file has been created.'));
 };
 
 // Function to use Inquirer to ask user for input
-const promptUser = () => {
-  return inquirer.prompt([
+// promptUser = () => {
+//     return inquirer.prompt([
+const questions = [
     {
       type: 'input',
       message: 'What is your GitHub username?',
@@ -69,14 +69,17 @@ const promptUser = () => {
       message: 'What does the user need to know about contributing to the repo?',
       name: 'contributing',
     },
-]);
+];
+// Just added when made questions array
+const promptUser = () => {
+    return inquirer.prompt(questions)
+}
+
 
 // TODO: When trying to use util and promisify 
-// function init() {
+// const init = () => {
 //     promptUser()
-//     .then((userAnswers) => {
-//         const markdown = generateMarkdown(userAnswers)
-//         writeFileAsync('README.md', markdown)}
+//     .then((userInput) => writeToFile('README.md', generateMarkdown(userInput)))
 //     .then(() => console.log('Successfully wrote to README.md'))
 //     .catch((err) => console.error(err));
 // }
@@ -91,5 +94,5 @@ const init = () => {
 };
 
 
-// This function call initializes the app.
+// Function call to initialize the app
 init();
