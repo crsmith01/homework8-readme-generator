@@ -67,15 +67,17 @@ const renderLicenseLink = (license) => {
 
 // (Arrow) function to dynamically create the README file with template literal, inserting user responses from the prompts in Inquirer
 const generateMarkdown = (answers) => {
-// should answers be data??? lines 61-62 provided or something I added?????
+  // Destructuring the user's answers
+  const { project, description, dependencies, repo, license, contributing, test, email, username } = answers;
+  // Bringing the license badges and links into the function that generates that markdown
   const licenseBadge = renderLicenseBadge(license);
   const licenseURL = renderLicenseLink(license);  
 
   return `
-# ${answers.project}
+# ${project}
 
 ## Description
-${answers.description}
+${description}
 
 ## Table of Contents
 1. [Installation](#Installation)
@@ -86,26 +88,26 @@ ${answers.description}
 6. [Questions](#Questions)
 
 ## Installation
-To install necessary dependencies, run the following command${answers.dependencies}
+To install necessary dependencies, run the following command${dependencies}
 
 ## Usage
-${answers.repo}
+${repo}
 
 ## License
-This project is licensed under the ${answers.license} license.
+This project is licensed under the ${license} license.
 
 ## Contributing
-${answers.contributing}
+${contributing}
 
 ## Tests
-To run tests, run the following command: ${answers.test}
+To run tests, run the following command: ${test}
 
 ## Questions
-If you have any questions about the repo, either open an issue or contact me directly at ${answers.email}. You can find more of my work at ${answers.username}.
+If you have any questions about the repo, either open an issue or contact me directly at ${email}. You can find more of my work at ${username}.
 `
 }
 
 // Exports this file so the content can be used in other files (in this case, index.js)
-// should it be module.exports = {
-  // generateMarkdown: generateMarkedown}
-module.exports = generateMarkdown;
+module.exports = {
+  generateMarkdown: generateMarkdown
+}
