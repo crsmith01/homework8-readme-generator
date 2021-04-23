@@ -5,11 +5,10 @@ When creating an open source project on GitHub, it is important to have a high-q
 This is a command-line application that dynamically creates a professional README.md from a user's input via the Inquirer package, so the project creator can devote more time to working on their project. The finished README file includes space to describe what a new app is used for, how to report issues, and how to contribute to the app.
 
 ## Technologies Used
+```
 1. JavaScript
 2. Node
-2. Inquirer
-
-```
+3. Inquirer
 ```
 
 ## User Story
@@ -42,15 +41,11 @@ GIVEN a command-line application that accepts user input
 
 ## Mock Up
 The following video showcases the web application's appearance and functionality:
-![screenshot](./__________________)
+[video demonstration]().
 
-************INSERT VIDEO HERE!!!!!!!!**********
-
-```
-```
 
 ### Contact:
-* If you have any questions about the repo, contact me at [crsmith01](https://github.com/crsmith01).
+If you have any questions about the repo, contact me at [crsmith01](https://github.com/crsmith01).
 
 
 ## License
