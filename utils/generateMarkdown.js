@@ -55,7 +55,7 @@ const renderLicenseLink = (license) => {
 const generateMarkdown = (responses) => {
   // Destructuring the user's responses (makes drier code in the template literal section) (from activities 25&26)
   const { project, description, dependencies, repo, license, contributing, test, email, username } = responses;
-  // Bringing the license badges and links into the function that generates that markdown
+  // Bringing the license badges and links into the function that generates that markdown. Using [0] as placeholder for choices array
   let licenseBadge = renderLicenseBadge(license[0]);
   // console.log(license[0]);
   let licenseURL = renderLicenseLink(license[0]);  

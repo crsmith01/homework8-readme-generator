@@ -51,7 +51,7 @@ GIVEN a command-line application that accepts user input
 
 ## Mock Up
 The following video showcases the web application's appearance and functionality:
-[video demonstration]().
+[video demonstration](https://drive.google.com/file/d/1rBX_F5HQJCNdKeE9r9OwHLKUVHUE8if0/view).
 
 
 ## Contact
