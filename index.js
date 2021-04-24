@@ -77,14 +77,22 @@ const promptUser = () => {
 
 
 // Function to initialize the app.
-const init = () => {
-    promptUser()
-        .then((userAnswers) => {
-            const markdown = generateMarkdown.generateMarkdown(userAnswers)
-            writeToFile(markdown)
-        })
-};
+// This one resultsed in an "Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch()."
+// const init = () => {
+//     promptUser()
+//         .then((userAnswers) => {
+//             const markdown = generateMarkdown(userAnswers)
+//             writeToFile(markdown)
+//         })
+// };
 
+const init = () => {
+  promptUser()
+      .then((userAnswers) => {
+          const markdown = generateMarkdown.generateMarkdown(userAnswers)
+          writeToFile(markdown)
+      })
+};
 
 // Function call to initialize the app
 init();

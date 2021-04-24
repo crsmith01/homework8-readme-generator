@@ -1,6 +1,6 @@
 // Function returns a license badge based on which license is passed in by the user
+let licenseBadge;
 const renderLicenseBadge = (license) => {
-  let licenseBadge;
   // Evaluates user input for the 5 license choices. Switch statement because we have 5 defined cases (4 licenses and option for no license) 
   switch (license) {
     case 'MIT':
@@ -26,8 +26,8 @@ const renderLicenseBadge = (license) => {
 
 
 // This function returns the license link to the appropriate page on opensource.org, so the user can view more information about the chosen license.
+let licenseURL;
 const renderLicenseLink = (license) => {
-  let licenseURL;
   // Switch statement because we have 5 defined cases (4 licenses and option for no license). From activity 16: Modularization 
   switch (license) {
     case 'MIT':
@@ -53,11 +53,12 @@ const renderLicenseLink = (license) => {
 
 // (Arrow) function to dynamically create the README file with template literal, inserting user responses from the prompts in Inquirer
 const generateMarkdown = (responses) => {
-  // Destructuring the user's responses (makes drier code in the template literal section)
+  // Destructuring the user's responses (makes drier code in the template literal section) (from activities 25&26)
   const { project, description, dependencies, repo, license, contributing, test, email, username } = responses;
   // Bringing the license badges and links into the function that generates that markdown
-  const licenseBadge = renderLicenseBadge(license);
-  const licenseURL = renderLicenseLink(license);  
+  let licenseBadge = renderLicenseBadge(license[0]);
+  // console.log(license[0]);
+  let licenseURL = renderLicenseLink(license[0]);  
 
   return `
   ## Project Name
@@ -99,5 +100,5 @@ const generateMarkdown = (responses) => {
 
 // Exports this file so the content can be used in other files (in this case, index.js)
 module.exports = {
-  generateMarkdown: generateMarkdown
+  generateMarkdown
 }

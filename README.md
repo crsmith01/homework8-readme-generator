@@ -1,28 +1,36 @@
 
-  # Project Name:
-  undefined
-  ## License
-  undefined : [View License](undefined)
-  ## Table of Contents
-  - [Title](#Project-Name)
-  - [License](#License)
-  - [Description](#Description)
-  - [Installation](#Installation)
-  - [Usage](#Usage)
-  - [Contributions](#Contributions)
-  - [Tests](#Tests)
-  - [Questions](#Questions)
+  ## Project Name
+  
+
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
   ## Description
   
+
+  ## Table of Contents
+  1. [Installation](#Installation)
+  2. [Usage](#Usage)
+  3. [License](#License)
+  4. [Contributing](#Contributing)
+  5. [Tests](#Tests)
+  6. [Questions](#Questions)
+
   ## Installation
-  Navigate to the root directory of this repository and run the following commands to install necessary dependencies:
-    undefined
+  To install necessary dependencies, run the following command: npm i
+
   ## Usage
-  undefined
-  ## Contributions 
-  undefined
-  ## Tests 
-  undefined
-  ## Questions 
-  For issues, questions, and comments please contact  or visit [https://github.com/undefined](https://github.com/undefined) 
+  
+
+  ## License
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  This project is licensed under the MIT license. [Read more here.](https://opensource.org/licenses/MIT)
+
+  ## Contributing
+  
+
+  ## Tests
+  To run tests, run the following command: npm test
+
+  ## Questions
+  If you have any questions about the repo, either open an issue or contact me directly at . You can find more of my work at .
   
