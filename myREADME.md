@@ -3,7 +3,7 @@
 ## Description
 When creating an open source project on GitHub, it is important to have a high-quality README for the application and should include what the app is for, how to use the app, how to install the app, how to report issues, and how to make contributions to increase the likelihood that other developers will contribute to the success of the project. 
 
-This is a command-line application that dynamically creates a professional README.md from a user's input via the Inquirer package, so the project creator can devote more time to working on their project. The finished README file includes space to describe what a new app is used for, how to report issues, and how to contribute to the app.
+This is a command-line application that dynamically creates a professional README from a user's input via the Inquirer package, so the project creator can devote more time to working on their project. The finished README file includes space to describe what a new app is used for, how to report issues, and how to contribute to the app.
 
 ## Table of Contents
 1. [Technologies Used](#Technologies-Used)
