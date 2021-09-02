@@ -10,8 +10,9 @@ This is a command-line application that dynamically creates a professional READM
 2. [User Story](#User-Story)
 3. [Acceptance Criteria](#Acceptance-Criteria)
 4. [Mock Up](#Mock-Up)
-5. [Contact](#Contact)
-6. [License](#License)
+5. [Usage](#Usage)
+6. [Contact](#Contact)
+7. [License](#License)
 
 
 ## Technologies Used
@@ -52,6 +53,12 @@ GIVEN a command-line application that accepts user input
 ## Mock Up
 The following video showcases the web application's appearance and functionality:
 [video demonstration](https://drive.google.com/file/d/1rBX_F5HQJCNdKeE9r9OwHLKUVHUE8if0/view).
+
+
+## Usage
+1. Clone down the repo and download the necessary dependcies: ```npm i inquirer```
+2. Start the application by nagivating to the repo on your local machine and running ```node index```.
+3. Answer the questions, and find your new README.md file in the folder.
 
 
 ## Contact
