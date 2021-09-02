@@ -7,7 +7,7 @@ This is a command-line application that dynamically creates a professional READM
 
 ## Table of Contents
 1. [Technologies Used](#Technologies-Used)
-2. [User Stort](#User-Story)
+2. [User Story](#User-Story)
 3. [Acceptance Criteria](#Acceptance-Criteria)
 4. [Mock Up](#Mock-Up)
 5. [Contact](#Contact)
